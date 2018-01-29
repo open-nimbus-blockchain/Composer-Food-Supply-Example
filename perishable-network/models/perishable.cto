@@ -11,11 +11,6 @@ namespace org.acme.shipping.perishable
  * The type of perishable product being shipped
  */
 enum ProductType {
-  o BANANAS
-  o APPLES
-  o PEARS
-  o PEACHES
-  o COFFEE
   o MILK
   o CREAM
   o BUTTER
