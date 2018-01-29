@@ -14,16 +14,19 @@ enum ProductType {
   o MILK
   o CREAM
   o BUTTER
-  o FLAVOURED MILK
-  o CUSTARD YOGHURT
+  o FLAVOURED_MILK
+  o CUSTARD
   o ICECREAM
-  o GREEK YOGHURT
-  o KIDS YOGHURT
+  o GREEK_YOGHURT
+  o KIDS_YOGHURT
   o MARGARINE
-  o SOUR CREAM
+  o SOUR_CREAM
   o YOGHURT
   o PROBIOTIC
-  o ITALIAN CHEESE
+  o ITALIAN_CHEESE
+  o MILK_SOLIDS
+  o MILK_POWDER
+  o BABY_FORMULA
 }
 
 /**
@@ -102,7 +105,8 @@ concept Address {
 /**
  * An abstract participant type in this business network
  */
-abstract participant Account identified by email {
+abstract participant Account identified by accountId {
+  o String accountId
   o String email
   o Address address
   o Double accountBalance
@@ -111,7 +115,9 @@ abstract participant Account identified by email {
 /**
  * An abstract participant type in this business network
  */
-abstract participant Contact identified by email {
+abstract participant Contact identified by contactId {
+  o String contactId
+  --> Account optional
   o String email
   o Address address
   o Double accountBalance
