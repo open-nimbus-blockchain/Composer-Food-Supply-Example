@@ -16,6 +16,19 @@ enum ProductType {
   o PEARS
   o PEACHES
   o COFFEE
+  o MILK
+  o CREAM
+  o BUTTER
+  o FLAVOURED MILK
+  o CUSTARD YOGHURT
+  o ICECREAM
+  o GREEK YOGHURT
+  o KIDS YOGHURT
+  o MARGARINE
+  o SOUR CREAM
+  o YOGHURT
+  o PROBIOTIC
+  o ITALIAN CHEESE
 }
 
 /**
@@ -94,7 +107,16 @@ concept Address {
 /**
  * An abstract participant type in this business network
  */
-abstract participant Business identified by email {
+abstract participant Account identified by email {
+  o String email
+  o Address address
+  o Double accountBalance
+}
+
+/**
+ * An abstract participant type in this business network
+ */
+abstract participant Contact identified by email {
   o String email
   o Address address
   o Double accountBalance
@@ -103,19 +125,19 @@ abstract participant Business identified by email {
 /**
  * A Grower is a type of participant in the network
  */
-participant Grower extends Business {
+participant Grower extends Account {
 }
 
 /**
  * A Shipper is a type of participant in the network
  */
-participant Shipper extends Business {
+participant Shipper extends Account {
 }
 
 /**
  * An Importer is a type of participant in the network
  */
-participant Importer extends Business {
+participant Importer extends Account {
 }
 
 /**
