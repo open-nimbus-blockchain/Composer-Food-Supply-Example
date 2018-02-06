@@ -11,22 +11,11 @@ namespace org.acme.shipping.perishable
  * The type of perishable product being shipped
  */
 enum ProductType {
-  o MILK
-  o CREAM
-  o BUTTER
-  o FLAVOURED_MILK
-  o CUSTARD
-  o ICECREAM
-  o GREEK_YOGHURT
-  o KIDS_YOGHURT
-  o MARGARINE
-  o SOUR_CREAM
-  o YOGHURT
-  o PROBIOTIC
-  o ITALIAN_CHEESE
-  o MILK_SOLIDS
-  o MILK_POWDER
-  o BABY_FORMULA
+  o BANANAS
+  o APPLES
+  o PEARS
+  o PEACHES
+  o COFFEE
 }
 
 /**
@@ -105,19 +94,7 @@ concept Address {
 /**
  * An abstract participant type in this business network
  */
-abstract participant Account identified by accountId {
-  o String accountId
-  o String email
-  o Address address
-  o Double accountBalance
-}
-
-/**
- * An abstract participant type in this business network
- */
-abstract participant Contact identified by contactId {
-  o String contactId
-  --> Account optional
+abstract participant Account identified by email {
   o String email
   o Address address
   o Double accountBalance
@@ -140,6 +117,18 @@ participant Shipper extends Account {
  */
 participant Importer extends Account {
 }
+
+
+/**
+ * An abstract participant type in this business network
+ */
+abstract participant Contact identified by email {
+  o String email
+  o Address address
+  o Double accountBalance
+}
+
+
 
 /**
  * JUST FOR INITIALIZING A DEMO
