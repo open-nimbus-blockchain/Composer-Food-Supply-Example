@@ -16,6 +16,9 @@ enum ProductType {
   o PEARS
   o PEACHES
   o COFFEE
+  o GRAPES
+  o MANGOES
+  o TEA
 }
 
 /**
@@ -94,7 +97,7 @@ concept Address {
 /**
  * An abstract participant type in this business network
  */
-abstract participant Account identified by email {
+abstract participant Business identified by email {
   o String email
   o Address address
   o Double accountBalance
@@ -103,32 +106,20 @@ abstract participant Account identified by email {
 /**
  * A Grower is a type of participant in the network
  */
-participant Grower extends Account {
+participant Grower extends Business {
 }
 
 /**
  * A Shipper is a type of participant in the network
  */
-participant Shipper extends Account {
+participant Shipper extends Business {
 }
 
 /**
  * An Importer is a type of participant in the network
  */
-participant Importer extends Account {
+participant Importer extends Business {
 }
-
-
-/**
- * An abstract participant type in this business network
- */
-abstract participant Contact identified by email {
-  o String email
-  o Address address
-  o Double accountBalance
-}
-
-
 
 /**
  * JUST FOR INITIALIZING A DEMO

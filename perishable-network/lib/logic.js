@@ -166,7 +166,7 @@ function setupDemo(setupDemo) {
 
     // create the shipment
     var shipment = factory.newResource(NS, 'Shipment', 'SHIP_001');
-    shipment.type = 'MILK';
+    shipment.type = 'BANANAS';
     shipment.status = 'IN_TRANSIT';
     shipment.unitCount = 5000;
     shipment.contract = factory.newRelationship(NS, 'Contract', 'CON_001');
